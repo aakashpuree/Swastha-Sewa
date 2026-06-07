@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Swastha Sewa</title>
+  <meta name="description" content="Get in touch with the Swastha Sewa team. Feedback, suggestions, and partnership inquiries welcome.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .contact-form { max-width: 600px; margin: 40px auto; background: #161616; padding: 40px; border-radius: 12px; border: 1px solid #2a2a2a; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 8px; color: #a0a0a0; font-size: 0.9rem; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; background: #0a0a0a; border: 1px solid #2a2a2a; color: white; padding: 14px; border-radius: 8px; font-family: 'Rajdhani', sans-serif; font-size: 1rem;
+    }
+    .form-group input:focus, .form-group textarea:focus { border-color: #d1fe17; outline: none; }
+    .success-message { display: none; background: rgba(23,254,140,0.1); border: 1px solid #17fe8c; padding: 20px; border-radius: 8px; color: #17fe8c; text-align: center; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-brand">
+        <span class="logo-icon">🌿</span>
+        <a href="../index.html" style="color: inherit;">Swastha Sewa</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../index.html#categories">Categories</a></li>
+        <li><a href="../index.html#search-filter-section">Search</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div style="max-width: 800px; margin: 0 auto; padding: 60px 20px 20px;">
+    <h1 style="text-align: center; font-size: 2.5rem;">Get In Touch</h1>
+    <p style="text-align: center; color: #a0a0a0; max-width: 500px; margin: 0 auto 40px;">
+      Have feedback, suggestions for new diseases, or want to collaborate? We'd love to hear from you.
+    </p>
+    
+    <div class="contact-form">
+      <form id="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">Select a topic</option>
+            <option value="feedback">General Feedback</option>
+            <option value="suggestion">Disease Suggestion</option>
+            <option value="correction">Content Correction</option>
+            <option value="partnership">Partnership / Collaboration</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 1.05rem;">
+          Send Message
+        </button>
+      </form>
+      
+      <div id="success-message" class="success-message">
+        <strong>Thank you!</strong><br>
+        Your message has been received. We typically respond within 48 hours.
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px; color: #606060;">
+      <p>You can also reach us at <a href="mailto:hello@swasthasewa.org" style="color: #d1fe17;">hello@swasthasewa.org</a></p>
+      <p style="margin-top: 30px;"><a href="../index.html" style="color: #a0a0a0;">← Return to Encyclopedia</a></p>
+    </div>
+  </div>
+  
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      
+      // Simulate form submission
+      const form = document.getElementById('contact-form');
+      const success = document.getElementById('success-message');
+      
+      form.style.display = 'none';
+      success.style.display = 'block';
+      
+      // In a real app, you would send this to a backend
+      setTimeout(() => {
+        form.reset();
+        form.style.display = 'block';
+        success.style.display = 'none';
+      }, 4500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* ========================================
+   SWASTHA SEWA - Reusable Component Styles
+   ======================================== */
+
+/* Glassmorphism Card Base */
+.glass-card {
+  background: rgba(22, 22, 22, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+/* Neon Button Variants */
+.btn-neon {
+  background: transparent;
+  border: 1px solid var(--primary-accent);
+  color: var(--primary-accent);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-fast);
+}
+
+.btn-neon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(209, 254, 23, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.btn-neon:hover::before {
+  left: 300%;
+}
+
+.btn-neon:hover {
+  background: var(--primary-accent);
+  color: var(--primary-dark-bg);
+  box-shadow: var(--shadow-neon);
+}
+
+/* Severity Color Utilities */
+.severity-mild { color: var(--severity-mild) !important; }
+.severity-moderate { color: var(--severity-moderate) !important; }
+.severity-severe { color: var(--severity-severe) !important; }
+.severity-critical { color: var(--severity-critical) !important; }
+
+/* Type Color Utilities */
+.type-viral { color: var(--type-viral) !important; }
+.type-bacterial { color: var(--type-bacterial) !important; }
+.type-fungal { color: var(--type-fungal) !important; }
+.type-parasitic { color: var(--type-parasitic) !important; }
+.type-genetic { color: var(--type-genetic) !important; }
+.type-autoimmune { color: var(--type-autoimmune) !important; }
+.type-metabolic { color: var(--type-metabolic) !important; }
+
+/* Left Accent Border */
+.left-accent {
+  border-left: 3px solid var(--primary-accent);
+}
+
+/* Category Accent Borders */
+.left-accent-human { border-left-color: var(--color-human); }
+.left-accent-animal { border-left-color: var(--color-animal); }
+.left-accent-plant { border-left-color: var(--color-plant); }
+
+/* Pill Badges */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+}
+
+.pill-primary {
+  background: var(--primary-accent);
+  color: var(--primary-dark-bg);
+}
+
+.pill-outline {
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+/* Info Card (used in modal) */
+.info-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+}
+
+.info-card + .info-card {
+  margin-top: var(--spacing-sm);
+}
+
+/* Bookmark Heart Icon States */
+.bookmark-btn {
+  transition: transform 0.2s ease;
+}
+
+.bookmark-btn.bookmarked {
+  color: #fe1754 !important;
+}
+
+.bookmark-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Share Button */
+.share-btn {
+  transition: all var(--transition-fast);
+}
+
+.share-btn:hover {
+  color: var(--primary-accent);
+  transform: translateY(-1px);
+}
+
+/* Print Button */
+.print-btn:hover {
+  color: #3b82f6;
+}
+
+/* Alphabet Bar Active State Enhancement */
+.alpha-btn.active {
+  box-shadow: 0 0 10px rgba(209, 254, 23, 0.4);
+}
+
+/* Search Suggestion Highlight */
+.suggestion-item mark {
+  background: rgba(209, 254, 23, 0.2);
+  color: var(--primary-accent);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Disease Card Hover Left Border Glow */
+.disease-card:hover {
+  border-left-width: 4px;
+}
+
+/* Modal Section Left Accent */
+.modal-section {
+  position: relative;
+}
+
+.modal-section::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary-accent);
+  opacity: 0.6;
+}
+
+/* Stats Number Animation Container */
+.stat-number {
+  transition: all 0.3s ease;
+}
+
+/* Loading Skeleton for Cards */
+.skeleton-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  height: 280px;
+}
+
+.skeleton-card .skeleton {
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Filter Dropdown Styling Enhancement */
+.filter-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23606060' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  padding-right: 36px;
+}
+
+/* Responsive Table-like List View */
+@media (min-width: 768px) {
+  .disease-grid.list-view .disease-card {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  .disease-grid.list-view .card-header {
+    flex: 0 0 180px;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .disease-grid.list-view .card-title {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+/* High Contrast Focus for Accessibility */
+@media (prefers-contrast: high) {
+  .disease-card {
+    border: 2px solid var(--border-color);
+  }
+  
+  .btn-primary {
+    border: 2px solid var(--primary-dark-bg);
+  }
+}
+
+/* Print Styles */
+@media print {
+  header, .filter-section, .trending-section, .how-it-works, .stats-section, footer, .scroll-top {
+    display: none !important;
+  }
+  
+  .disease-grid {
+    display: block;
+  }
+  
+  .disease-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+  }
+}

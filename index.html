@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Swastha Sewa - Complete Disease Encyclopedia | Human, Animal &amp; Plant Health</title>
+  <meta name="description" content="Swastha Sewa is your trusted health companion - a comprehensive, production-ready disease encyclopedia covering 350+ diseases in humans, animals, and plants with Nepali names and common local ailments (खोकी, टाउको दुखाइ, पेट दुखाइ, etc.). Search, learn, and understand with detailed information on symptoms, causes, treatment, and prevention.">
+  <meta name="keywords" content="disease encyclopedia, human diseases, animal diseases, plant diseases, health information, medical reference, veterinary, agriculture, malaria, rabies, late blight, COVID-19, diabetes, खोकी, टाउको दुखाइ, पेट दुखाइ, ज्वरो, नेपाल रोग">
+  <meta name="author" content="Swastha Sewa">
+  
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Swastha Sewa - Complete Disease Encyclopedia">
+  <meta property="og:description" content="Your trusted health companion. Explore 100+ diseases affecting humans, animals, and plants with detailed, accurate information.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://swasthasewa.example.com">
+  <meta property="og:image" content="assets/images/og-image.png">
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#d1fe17">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Google Fonts - Rajdhani -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+  
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="css/style.css" as="style">
+  
+  <!-- Main Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🌿&lt;/text&gt;&lt;/svg&gt;">
+  
+  <style>
+    /* Critical inline styles for above-the-fold */
+    .hero { min-height: 100vh; }
+  </style>
+</head>
+<body>
+  <!-- Skip to main content for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <!-- LOADER SCREEN -->
+  <div id="loader">
+    <div class="loader-logo">🌿</div>
+    <div class="loader-text">Swastha Sewa</div>
+    <div class="loader-progress">
+      <div class="loader-progress-bar"></div>
+    </div>
+    <div class="loader-status">Loading disease database...</div>
+  </div>
+  
+  <!-- HEADER / NAVBAR -->
+  <header>
+    <nav>
+      <div class="nav-brand">
+        <span class="logo-icon">🌿</span>
+        <span>Swastha Sewa</span>
+      </div>
+      
+      <ul class="nav-links">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#search-filter-section">Search</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+      
+      <div class="nav-right">
+        <div class="stats-badge">
+          <span class="count">480+ Diseases</span>
+        </div>
+        <div class="keyboard-hint" title="Press Ctrl+K to search">Ctrl+K</div>
+        
+        <!-- Mobile Hamburger -->
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+  
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <!-- Background orbs -->
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+    
+    <div class="hero-content">
+      <div class="hero-badge">
+        🔬 480+ Diseases • Human • Animal • Plant • नेपाली नाम सहित
+      </div>
+      
+      <h1>Complete Disease <span class="highlight">Encyclopedia</span></h1>
+      <p class="hero-subtitle">Your trusted health companion. Search, learn and understand diseases affecting humans, animals, and plants.</p>
+      
+      <!-- Main Search Bar -->
+      <div class="search-container">
+        <div class="search-bar">
+          <input 
+            type="text" 
+            id="hero-search" 
+            placeholder="Search any disease... e.g. Malaria, Rabies, Rust" 
+            aria-label="Search diseases"
+          >
+          <button id="hero-search-btn" aria-label="Search">
+            Search <span>→</span>
+          </button>
+        </div>
+        <div id="hero-suggestions" class="search-suggestions"></div>
+      </div>
+      
+      <!-- Quick Stats -->
+      <div class="quick-stats">
+        <div class="stat-item">
+          <span class="stat-number">250</span>
+          <span class="stat-label">Human Diseases<br><small>(नेपाली नाम सहित)</small></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">140</span>
+          <span class="stat-label">Animal Diseases<br><small>(नेपाली नाम सहित)</small></span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">90</span>
+          <span class="stat-label">Plant Diseases<br><small>(नेपाली नाम सहित)</small></span>
+        </div>
+      </div>
+      
+      <!-- Category Quick Buttons -->
+      <div class="category-buttons">
+        <button class="category-btn human" data-category="human">
+          👤 Humans
+        </button>
+        <button class="category-btn animal" data-category="animal">
+          🐾 Animals
+        </button>
+        <button class="category-btn plant" data-category="plant">
+          🌿 Plants
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CATEGORY SHOWCASE -->
+  <section id="categories" class="category-showcase">
+    <h2 class="section-title">Choose Your Category</h2>
+    
+    <div class="category-grid">
+      <!-- Human Card -->
+      <div class="category-card human" data-category="human" role="button" tabindex="0">
+        <span class="icon">👤</span>
+        <h3>Human Diseases</h3>
+        <div class="count">250 Diseases (नेपाली नाम सहित)</div>
+        <div class="tags">
+          <span class="tag">Viral</span>
+          <span class="tag">Bacterial</span>
+          <span class="tag">Genetic</span>
+          <span class="tag">Metabolic</span>
+        </div>
+        <p>Comprehensive information on common and emerging diseases affecting human health worldwide.</p>
+        <button class="explore-btn">Explore Human Diseases →</button>
+      </div>
+      
+      <!-- Animal Card -->
+      <div class="category-card animal" data-category="animal" role="button" tabindex="0">
+        <span class="icon">🐾</span>
+        <h3>Animal Diseases</h3>
+        <div class="count">140 Diseases (नेपाली नाम सहित)</div>
+        <div class="tags">
+          <span class="tag">Zoonotic</span>
+          <span class="tag">Livestock</span>
+          <span class="tag">Pets</span>
+          <span class="tag">Wildlife</span>
+        </div>
+        <p>Essential knowledge for veterinarians, farmers, and pet owners covering major animal health issues.</p>
+        <button class="explore-btn">Explore Animal Diseases →</button>
+      </div>
+      
+      <!-- Plant Card -->
+      <div class="category-card plant" data-category="plant" role="button" tabindex="0">
+        <span class="icon">🌿</span>
+        <h3>Plant Diseases</h3>
+        <div class="count">90 Diseases (नेपाली नाम सहित)</div>
+        <div class="tags">
+          <span class="tag">Crops</span>
+          <span class="tag">Fungal</span>
+          <span class="tag">Bacterial</span>
+          <span class="tag">Viral</span>
+        </div>
+        <p>Critical information for farmers and agricultural professionals on major plant pathogens and management.</p>
+        <button class="explore-btn">Explore Plant Diseases →</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SEARCH + FILTER SECTION -->
+  <main id="main-content">
+    <section id="search-filter-section" class="main-content">
+      <div class="filter-section">
+        <div class="filter-header">
+          <h2>Browse Disease Database</h2>
+          <button id="reset-filters" class="btn btn-outline btn-sm">Reset Filters</button>
+        </div>
+        
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+          <div class="filter-group">
+            <label for="filter-category">Category</label>
+            <select id="filter-category">
+              <option value="">All Categories</option>
+              <option value="human">Human</option>
+              <option value="animal">Animal</option>
+              <option value="plant">Plant</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-type">Disease Type</label>
+            <select id="filter-type">
+              <option value="">All Types</option>
+              <option value="viral">Viral</option>
+              <option value="bacterial">Bacterial</option>
+              <option value="fungal">Fungal</option>
+              <option value="parasitic">Parasitic</option>
+              <option value="genetic">Genetic</option>
+              <option value="autoimmune">Autoimmune</option>
+              <option value="metabolic">Metabolic</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="filter-severity">Severity</label>
+            <select id="filter-severity">
+              <option value="">All Severities</option>
+              <option value="mild">Mild</option>
+              <option value="moderate">Moderate</option>
+              <option value="severe">Severe</option>
+              <option value="critical">Critical</option>
+            </select>
+          </div>
+          
+          <div class="filter-group">
+            <label for="sort-by">Sort By</label>
+            <select id="sort-by">
+              <option value="default">Default (Trending first)</option>
+              <option value="name-asc">Name A → Z</option>
+              <option value="name-desc">Name Z → A</option>
+              <option value="severity">Severity (High to Low)</option>
+              <option value="category">Category</option>
+              <option value="trending">Trending</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Main Search Input -->
+        <div class="filter-group" style="margin-bottom: 16px;">
+          <label for="search-input">Search Diseases</label>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Search by name, symptoms, causes..."
+            style="width: 100%;"
+          >
+          <div id="search-suggestions" class="search-suggestions"></div>
+        </div>
+        
+        <!-- Alphabet Bar -->
+        <div id="alphabet-bar" class="alphabet-bar" aria-label="Filter by first letter"></div>
+        
+        <!-- Results Meta + View Toggle -->
+        <div class="results-meta">
+          <div id="results-meta">Showing <strong>480</strong> of <strong>480</strong> diseases (नेपाली नाम सहित)</div>
+          
+          <div class="view-toggle">
+            <button id="view-grid" class="view-btn active" aria-label="Grid view">⊞</button>
+            <button id="view-list" class="view-btn" aria-label="List view">☰</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Disease Grid -->
+      <div id="disease-grid" class="disease-grid">
+        <!-- Populated by JavaScript -->
+      </div>
+      
+      <!-- Load More -->
+      <div class="load-more-container">
+        <button id="load-more-btn" class="btn btn-outline btn-load-more" style="display: none;">
+          Load More Diseases
+        </button>
+      </div>
+    </section>
+    
+    <!-- TRENDING SEARCHES -->
+    <section class="trending-section">
+      <h2 class="section-title">🔥 Currently Trending</h2>
+      <div id="trending-pills" class="trending-pills">
+        <!-- Populated by JavaScript -->
+      </div>
+    </section>
+    
+    <!-- HOW IT WORKS -->
+    <section class="how-it-works">
+      <h2 class="section-title">How Swastha Sewa Works</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Search or Browse</h4>
+          <p>Use the powerful search bar or filter by category, type, or severity to find relevant diseases instantly.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Explore Details</h4>
+          <p>Click any disease card to open a comprehensive modal with symptoms, causes, treatments, prevention, and more.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Learn &amp; Share</h4>
+          <p>Bookmark important entries, share with others, and print detailed reports. All information is regularly updated.</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="stat-large">
+          <div class="number">480+</div>
+          <div class="label">Diseases Documented<br><small>(with नेपाली नाम)</small></div>
+        </div>
+        <div class="stat-large">
+          <div class="number">3</div>
+          <div class="label">Categories Covered</div>
+        </div>
+        <div class="stat-large">
+          <div class="number">7</div>
+          <div class="label">Disease Types</div>
+        </div>
+        <div class="stat-large">
+          <div class="number">∞</div>
+          <div class="label">Trusted by Thousands</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span>🌿</span>
+          <span>Swastha Sewa</span>
+        </div>
+        <p>"Your Trusted Health Companion" — A complete disease encyclopedia for humans, animals, and plants.</p>
+        
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Instagram">📷</a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#search-filter-section">Search Database</a></li>
+          <li><a href="pages/about.html">About Us</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#" onclick="selectCategory('human')">Human Diseases</a></li>
+          <li><a href="#" onclick="selectCategory('animal')">Animal Diseases</a></li>
+          <li><a href="#" onclick="selectCategory('plant')">Plant Diseases</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Disease Types</h4>
+        <ul>
+          <li><a href="#" onclick="document.getElementById('filter-type').value='viral';applyFilters()">Viral</a></li>
+          <li><a href="#" onclick="document.getElementById('filter-type').value='bacterial';applyFilters()">Bacterial</a></li>
+          <li><a href="#" onclick="document.getElementById('filter-type').value='fungal';applyFilters()">Fungal</a></li>
+          <li><a href="#" onclick="document.getElementById('filter-type').value='parasitic';applyFilters()">Parasitic</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div>
+        © 2026 Swastha Sewa. All rights reserved. 
+        <a href="pages/disclaimer.html">Medical Disclaimer</a>
+      </div>
+      <div>
+        Built for education &amp; awareness • Not a substitute for professional advice
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Floating Scroll to Top -->
+  <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">↑</button>
+  
+  <!-- Toast container (dynamically populated) -->
+  <div id="toast-container" class="toast-container"></div>
+  
+  <!-- SCRIPTS - Load in correct order -->
+  <script src="js/data/human-diseases.js"></script>
+  <script src="js/data/animal-diseases.js"></script>
+  <script src="js/data/plant-diseases.js"></script>
+  
+  <script src="js/utils.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/search.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
