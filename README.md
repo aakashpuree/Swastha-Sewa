@@ -115,4 +115,4 @@ Educational / Open for learning purposes. Please credit Swastha Sewa when sharin
 
 ---
 
-Built with precision and care for students, farmers, veterinarians, and the curious public.
+Built with precision and care for students, farmers, veterinarians, and the curious public.  
