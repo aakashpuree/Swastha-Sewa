@@ -10,7 +10,7 @@ A production-ready, beautifully designed disease encyclopedia website covering *
   - 250 Human Diseases (with Nepali names + many common local ailments like खोकी, टाउको दुखाइ, पेट दुखाइ)
   - 140 Animal Diseases (with Nepali names)
   - 90 Plant Diseases (with Nepali names)
-
+ 
 - **Advanced Search & Filtering**
   - Real-time search with smart ranking
   - Category, Type, Severity, and Alphabet filters
